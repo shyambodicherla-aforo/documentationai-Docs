@@ -1,0 +1,156 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and fixes in Aforo to stay informed about new features and changes.
+---
+
+## Latest Releases
+
+Stay current with Aforo's development by reviewing the most recent releases below. Each entry details new features, improvements, bug fixes, and any breaking changes.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration for shared documentation spaces
+- Introduced template gallery for quick project setups
+- Integrated search indexing for faster document discovery
+
+## Improvements
+
+- Enhanced editor performance with 40% faster rendering
+- Improved mobile responsiveness across all documentation pages
+- Updated UI components to use the brand color `#3B82F6` for better consistency
+
+## Bug Fixes
+
+- Fixed export issues with large documentation trees
+- Resolved authentication token refresh errors during long sessions
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["bugfix", "improvement"]}>
+
+## Improvements
+
+- Optimized database queries reducing load times by 25%
+- Added keyboard shortcuts for navigation: `<kbd>Ctrl</kbd>+<kbd>K</kbd>` for quick search
+
+## Bug Fixes
+
+- Corrected version history sync problems in collaborative edits
+- Fixed markdown rendering glitches with nested lists and code blocks
+- Patched potential security vulnerability in file upload handling
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core documentation organization system with folders and tags
+- Full-text search across all project spaces
+- Basic export to PDF and Markdown formats
+
+## Breaking Changes
+
+- Updated configuration format from JSON to YAML for better readability
+- Removed legacy v0.x API endpoints; migrate to `/v1/docs`
+
+## Migration Notes
+
+Update your config files as shown in the example below.
+
+<CodeGroup tabs="Before,After">
+```json
+{
+  "spaces": ["docs", "api"]
+}
+```
+```yaml
+spaces:
+  - docs
+  - api
+```
+</CodeGroup>
+
+</Update>
+
+## Upgrading to the Latest Version
+
+<Callout kind="info">
+Before upgrading, back up your documentation spaces to avoid data loss.
+</Callout>
+
+Follow these steps to upgrade Aforo smoothly:
+
+<Steps>
+<Step title="Check Current Version" icon="package">
+Run the version check command:
+
+````bash
+aforo --version
+````
+</Step>
+
+<Step title="Backup Data" icon="database">
+Export your spaces:
+
+````bash
+aforo export --all > backup-$(date +%Y%m%d).zip
+````
+</Step>
+
+<Step title="Update Package" icon="download">
+Use your package manager:
+
+<Tabs>
+<Tab title="npm" icon="package">
+````bash
+npm update aforo
+````
+</Tab>
+<Tab title="Docker" icon="docker">
+````bash
+docker pull aforo:latest
+````
+</Tab>
+</Tabs>
+</Step>
+
+<Step title="Verify Installation" icon="check-circle">
+Restart services and test:
+
+````bash
+aforo start --test
+````
+</Step>
+</Steps>
+
+## Quick Links
+
+<Columns cols={3}>
+<Card title="Quickstart" icon="rocket" href="/quickstart">
+Get started with your first documentation space.
+</Card>
+<Card title="Authentication" icon="shield" href="/authentication">
+Secure your Aforo instance properly.
+</Card>
+<Card title="Configuration" icon="settings" href="/configuration">
+Customize settings for your needs.
+</Card>
+</Columns>
+
+<Expandable title="Detailed Migration Guide" default-open="false">
+For v1.0.0 users, update environment variables:
+
+| Old Variable       | New Variable          | Default Value |
+|--------------------|-----------------------|---------------|
+| `AFORO_SPACES`     | `AFORO_SPACES_LIST`   | `docs,api`    |
+| `DB_HOST`          | `DATABASE_HOST`       | `localhost`   |
+
+Review full migration notes in the release assets on GitHub.
+</Expandable>
+
+<Callout kind="tip">
+Subscribe to the Aforo newsletter or watch the GitHub repository for instant release notifications.
+</Callout>

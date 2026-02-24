@@ -1,0 +1,150 @@
+---
+title: Introduction to Aforo
+description: Discover Aforo, a powerful documentation management platform designed to help teams organize, collaborate on, and maintain project documentation efficiently.
+---
+
+<Callout kind="info" title="Starter Kit Template">
+  This documentation was generated as a starter kit template based on your brand. Please review and customize the content to accurately reflect your product's features, APIs, and capabilities.
+</Callout>
+
+## Overview
+
+Aforo streamlines your documentation workflow. You create, organize, and collaborate on project docs in a centralized space. Teams benefit from real-time editing, version history, and powerful search to keep information accessible and up-to-date.
+
+Aforo supports Markdown, embeds, and custom components. Maintain consistency across your projects while scaling documentation efforts effortlessly.
+
+## Key Features
+
+<Columns cols={3}>
+
+<Card title="Collaborative Editing" icon="users" href="#collaborative-editing">
+
+  Edit docs simultaneously with your team. See changes live and resolve conflicts easily.
+
+</Card>
+
+<Card title="Version Control" icon="git-branch" href="#version-control">
+
+  Track every change with built-in versioning. Roll back to previous versions instantly.
+
+</Card>
+
+<Card title="Advanced Search" icon="search" href="#advanced-search">
+
+  Find content quickly across all projects using full-text search and filters.
+
+</Card>
+
+</Columns>
+
+## Who Should Use Aforo
+
+Choose Aforo based on your role and needs.
+
+<Tabs>
+
+<Tab title="Developers" icon="code">
+
+  Document APIs, SDKs, and codebases. Integrate with Git for seamless workflows.
+
+</Tab>
+
+<Tab title="Product Managers" icon="package" >
+
+  Centralize user guides, roadmaps, and release notes. Share updates without email chains.
+
+</Tab>
+
+<Tab title="Teams & Enterprises" icon="building">
+
+  Scale documentation across departments. Enforce templates and access controls.
+
+</Tab>
+
+</Tabs>
+
+## Quick Start
+
+Get up and running in minutes.
+
+<Steps>
+
+<Step title="Create Account" icon="user-plus">
+
+  Visit `https://aforo.example.com` and sign up with your email.
+
+</Step>
+
+<Step title="New Workspace" icon="plus">
+
+  Create a workspace for your project.
+
+  ```javascript
+  // Example: Initialize via API
+  const workspace = await aforo.workspaces.create({
+    name: "My Project",
+    description: "Documentation hub"
+  });
+  ```
+
+</Step>
+
+<Step title="Add First Doc" icon="file-text">
+
+  Upload or create your first Markdown file.
+
+  <CodeGroup tabs="CLI,API">
+
+  ````bash
+  aforo docs create --workspace my-project --title "Getting Started"
+  ````
+
+  ````javascript
+  const doc = await aforo.docs.create({
+    workspaceId: "ws_123",
+    title: "Getting Started",
+    content: "# Welcome\nStart here."
+  });
+  ````
+
+  </CodeGroup>
+
+</Step>
+
+<Step title="Invite Team" icon="mail">
+
+  Share your workspace link and add collaborators.
+
+</Step>
+
+</Steps>
+
+## Next Steps
+
+<Columns cols={2}>
+
+<Card title="Quickstart Guide" icon="zap" href="/quickstart">
+
+  Dive deeper into setup and first project.
+
+</Card>
+
+<Card title="Authentication" icon="lock" href="/authentication">
+
+  Secure your workspace with API keys.
+
+</Card>
+
+<Card title="Changelog" icon="git-commit" href="/changelog">
+
+  See recent updates and improvements.
+
+</Card>
+
+</Columns>
+
+<Callout kind="tip">
+
+  Explore the <a href="/quickstart">Quickstart</a> next to build your first documentation site.
+
+</Callout>
